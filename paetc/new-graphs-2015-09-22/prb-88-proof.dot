@@ -1,0 +1,28 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.7"];
+  e1 [label="0.3"];
+  e2 [label="0.5"];
+  e3 [label="0.5"];
+  i0 [shape=box label="(love' $2 LT BT)"];
+  i1 [shape=box label="(goal' $3 $4 LT)"];
+  i2 [shape=box label="(happy' $4 LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  i2 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i2
+  e3 -> r3 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(kiss' e1 LT BT)"];
+ }
+}
+

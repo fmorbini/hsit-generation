@@ -1,0 +1,70 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.2"];
+  e2 [label="0.5"];
+  e3 [label="0.2"];
+  e4 [label="0.85"];
+  e5 [label="0.5"];
+  e6 [label="0.05"];
+  e7 [label="1.0"];
+  e8 [label="0.5"];
+  e9 [label="0.1"];
+  e10 [label="1.0"];
+  e11 [label="1.0"];
+  i0 [shape=box label="(like' $8 BT LT)"];
+  i1 [shape=box label="(goal' $62 E6 LT)"];
+  i2 [shape=box label="(see' $343 BT LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o2
+  i0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i0
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o3
+  i1 -> r4 [arrowhead=none]
+  o5 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i1
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o5
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o4
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> o6
+  i2 -> r8 [arrowhead=none]
+  i0 -> r8 [arrowhead=none]
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> i2
+  e9 -> r9 [arrowhead=none]
+  r10 [shape=point];
+  r10 -> o7
+  e10 -> r10 [arrowhead=none]
+  r11 [shape=point];
+  r11 -> o8
+  e11 -> r11 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 BT)"];
+  o1 [shape=box label="(inside' E2 LT)"];
+  o2 [shape=box label="(accompany' E3 BT LT)"];
+  o3 [shape=box label="(approach' E4 LT D)"];
+  o4 [shape=box label="(par' E5 E3 E4)"];
+  o5 [shape=box label="(exit' E6 LT)"];
+  o6 [shape=box label="(wave' E7 BT)"];
+  o7 [shape=box label="(par' E8 E6 E7)"];
+  o8 [shape=box label="(seq E5 E8)"];
+ }
+}
+

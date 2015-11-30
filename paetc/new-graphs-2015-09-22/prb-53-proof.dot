@@ -1,0 +1,85 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.5"];
+  e1 [label="0.2"];
+  e2 [label="0.2"];
+  e3 [label="0.1"];
+  e4 [label="0.1"];
+  e5 [label="0.5"];
+  e6 [label="0.1"];
+  e7 [label="0.1"];
+  e8 [label="0.1"];
+  e9 [label="0.75"];
+  e10 [label="0.75"];
+  e11 [label="0.75"];
+  e12 [label="0.75"];
+  e13 [label="1.0"];
+  i0 [shape=box label="(like' $6 BT C)"];
+  i1 [shape=box label="(excited' $52 LT)"];
+  i2 [shape=box label="(goal' $98 $99 LT)"];
+  i3 [shape=box label="(annoy' $99 LT BT)"];
+  i4 [shape=box label="(annoy' $99 LT C)"];
+  i5 [shape=box label="(dislike' $277 BT LT)"];
+  i6 [shape=box label="(dislike' $298 C LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o1
+  i1 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i1
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o2
+  i2 -> r4 [arrowhead=none]
+  i3 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i2
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i3
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o3
+  i2 -> r7 [arrowhead=none]
+  i4 -> r7 [arrowhead=none]
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> i4
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> o4
+  i5 -> r9 [arrowhead=none]
+  e9 -> r9 [arrowhead=none]
+  r10 [shape=point];
+  r10 -> i5
+  i3 -> r10 [arrowhead=none]
+  e10 -> r10 [arrowhead=none]
+  r11 [shape=point];
+  r11 -> o5
+  i6 -> r11 [arrowhead=none]
+  e11 -> r11 [arrowhead=none]
+  r12 [shape=point];
+  r12 -> i6
+  i4 -> r12 [arrowhead=none]
+  e12 -> r12 [arrowhead=none]
+  r13 [shape=point];
+  r13 -> o6
+  e13 -> r13 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(accompany' E1 BT C)"];
+  o1 [shape=box label="(jump' E2 LT)"];
+  o2 [shape=box label="(poke' E3 LT BT)"];
+  o3 [shape=box label="(poke' E4 LT C)"];
+  o4 [shape=box label="(ignore' E5 BT LT)"];
+  o5 [shape=box label="(ignore' E6 C LT)"];
+  o6 [shape=box label="(par' E7 E1 E2 E3 E4 E5 E6)"];
+ }
+}
+

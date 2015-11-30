@@ -1,0 +1,52 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.3"];
+  e1 [label="0.5"];
+  e2 [label="0.1"];
+  e3 [label="0.1"];
+  e4 [label="0.2"];
+  e5 [label="0.9"];
+  e6 [label="0.2"];
+  e7 [label="1.0"];
+  i0 [shape=box label="(goal' $1 $2 C)"];
+  i1 [shape=box label="(attack' $2 C LT)"];
+  i2 [shape=box label="(angryAt' $834 BT C)"];
+  i3 [shape=box label="(like' $850 BT LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o1
+  i0 -> r3 [arrowhead=none]
+  i1 -> r3 [arrowhead=none]
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o2
+  i2 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i2
+  i1 -> r5 [arrowhead=none]
+  i3 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i3
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o3
+  e7 -> r7 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(approach' E1 C LT)"];
+  o1 [shape=box label="(push' E2 C LT)"];
+  o2 [shape=box label="(chase' E3 BT C)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

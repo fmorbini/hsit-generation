@@ -1,0 +1,68 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.5"];
+  e1 [label="0.1"];
+  e2 [label="0.8"];
+  e3 [label="1.0"];
+  e4 [label="0.05"];
+  e5 [label="0.1"];
+  e6 [label="0.5"];
+  e7 [label="0.75"];
+  e8 [label="0.1"];
+  e9 [label="0.1"];
+  e10 [label="1.0"];
+  i0 [shape=box label="(angryAt' $4 LT BT)"];
+  i1 [shape=box label="(argueWith' $138 LT BT)"];
+  i2 [shape=box label="(goal' $392 $393 C)"];
+  i3 [shape=box label="(see' $393 BT C)"];
+  i4 [shape=box label="(bully' $488 BT C)"];
+  r0 [shape=point];
+  r0 -> i1
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o1
+  i1 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o2
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o3
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o4
+  i2 -> r5 [arrowhead=none]
+  i3 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i2
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> i3
+  o3 -> r7 [arrowhead=none]
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> o5
+  i4 -> r8 [arrowhead=none]
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> i4
+  e9 -> r9 [arrowhead=none]
+  r10 [shape=point];
+  r10 -> o7
+  e10 -> r10 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(argueWith' E1 LT BT)"];
+  o1 [shape=box label="(argueWith' E2 BT LT)"];
+  o2 [shape=box label="(par' E3 E1 E2)"];
+  o3 [shape=box label="(approach' E4 C BT)"];
+  o4 [shape=box label="(poke' E5 C BT)"];
+  o5 [shape=box label="(push' E6 BT C)"];
+  o6 [shape=box label="(argueWith' E7 BT LT)"];
+  o7 [shape=box label="(seq E3 E4 E5 E6 E7)"];
+ }
+}
+

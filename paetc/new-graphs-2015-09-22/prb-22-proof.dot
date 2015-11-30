@@ -1,0 +1,15 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.01"];
+  e1 [label="0.2"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(roam' E1 LT)"];
+  o1 [shape=box label="(inside' E2 LT)"];
+ }
+}
+

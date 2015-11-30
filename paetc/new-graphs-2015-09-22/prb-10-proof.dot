@@ -1,0 +1,63 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.8"];
+  e1 [label="0.5"];
+  e2 [label="0.8"];
+  e3 [label="0.1"];
+  e4 [label="0.5"];
+  e5 [label="0.2"];
+  e6 [label="0.5"];
+  e7 [label="0.4"];
+  e8 [label="0.5"];
+  e9 [label="1.0"];
+  i0 [shape=box label="(argueWith' $3 C BT)"];
+  i1 [shape=box label="(angryAt' $8 C BT)"];
+  i2 [shape=box label="(annoy' $26 BT C)"];
+  i3 [shape=box label="(goal' $27 $26 BT)"];
+  i4 [shape=box label="(avoid' $3223 C BT)"];
+  i5 [shape=box label="(goal' $3225 $3223 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  i1 -> r1 [arrowhead=none]
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  i2 -> r2 [arrowhead=none]
+  i3 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i2
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i3
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o1
+  i2 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o2
+  i4 -> r6 [arrowhead=none]
+  i5 -> r6 [arrowhead=none]
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> i4
+  i2 -> r7 [arrowhead=none]
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> i5
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> o3
+  e9 -> r9 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(argueWith' E1 BT C)"];
+  o1 [shape=box label="(turn' E2 C)"];
+  o2 [shape=box label="(exit' E3 C)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

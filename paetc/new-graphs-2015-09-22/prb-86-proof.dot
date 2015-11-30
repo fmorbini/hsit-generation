@@ -1,0 +1,22 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.8"];
+  e1 [label="0.9"];
+  e2 [label="0.1"];
+  i0 [shape=box label="(hiding' $1 LT)"];
+  i1 [shape=box label="(embarrassed' $2 LT $3)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  i1 -> r1 [arrowhead=none]
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(moveTo' E1 LT BEHINDBOX)"];
+ }
+}
+

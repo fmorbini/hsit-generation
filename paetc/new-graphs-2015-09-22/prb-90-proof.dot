@@ -1,0 +1,33 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.5"];
+  e2 [label="0.05"];
+  e3 [label="0.1"];
+  e4 [label="1.0"];
+  i0 [shape=box label="(goal' $8 $9 LT)"];
+  i1 [shape=box label="(rob' $9 LT C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o1
+  i1 -> r3 [arrowhead=none]
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o2
+  e4 -> r4 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(push' E1 LT C)"];
+  o1 [shape=box label="(escape' E2 LT C)"];
+  o2 [shape=box label="(seq E1 E2)"];
+ }
+}
+

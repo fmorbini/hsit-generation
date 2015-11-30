@@ -1,0 +1,22 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.5"];
+  e1 [label="0.5"];
+  e2 [label="0.06"];
+  i0 [shape=box label="(goal' $1 $2 LT)"];
+  i1 [shape=box label="(avoid' $2 LT C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(escape' E1 LT C)"];
+ }
+}
+

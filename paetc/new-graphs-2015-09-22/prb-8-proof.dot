@@ -1,0 +1,16 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.1"];
+  e1 [label="0.2"];
+  i0 [shape=box label="(angry' $1 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(hit' E1 C LT)"];
+ }
+}
+

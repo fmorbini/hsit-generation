@@ -1,0 +1,32 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.2"];
+  e2 [label="0.25"];
+  e3 [label="0.6"];
+  e4 [label="0.2"];
+  i0 [shape=box label="(knowledgeGoal' $3 $4 C)"];
+  i1 [shape=box label="(curious' $5 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o2
+  i0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i0
+  i1 -> r3 [arrowhead=none]
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i1
+  e4 -> r4 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 C)"];
+  o1 [shape=box label="(inside' E2 LT)"];
+  o2 [shape=box label="(examine' E3 C LT)"];
+ }
+}
+

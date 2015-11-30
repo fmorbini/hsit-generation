@@ -1,0 +1,116 @@
+options {
+  LOOKAHEAD = 1;
+  CHOICE_AMBIGUITY_CHECK = 2;
+  OTHER_AMBIGUITY_CHECK = 1;
+  STATIC = false;
+  DEBUG_PARSER = false;
+  DEBUG_LOOKAHEAD = false;
+  DEBUG_TOKEN_MANAGER = false;
+  ERROR_REPORTING = true;
+  JAVA_UNICODE_ESCAPE = false;
+  UNICODE_INPUT = false;
+  IGNORE_CASE = true;
+  USER_TOKEN_MANAGER = false;
+  USER_CHAR_STREAM = false;
+  BUILD_PARSER = true;
+  BUILD_TOKEN_MANAGER = true;
+  SANITY_CHECK = true;
+  FORCE_LA_CHECK = false;
+}
+
+PARSER_BEGIN(Parser)
+package nlg3.parser;
+
+import java.util.ArrayList;
+import java.util.List;
+import nlg3.SyntaxBuilder;
+
+/** Simple brace matcher. */
+public class Parser {
+	public List makeArglist(Object f) {
+		if (f==null) return new ArrayList();
+		else {
+			List args=new ArrayList();
+			args.add(f);
+			return args;
+		}
+	}
+	public List makeArglist() {
+		return new ArrayList();
+	}
+	public List makeArglist(Object f,List args2) {
+		if (f==null) return null;
+		else {
+			List args=new ArrayList();
+			args.add(f);
+			if (args!=null) args.addAll(args2);
+			return args;
+		}
+	}
+	public SyntaxBuilder makeFunction(Token f,List<SyntaxBuilder> args) throws ParseException {
+	       	String fname=f.image;
+	       	try {
+        		SyntaxBuilder rr=SyntaxBuilder.create(fname,args);
+        		return rr;
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new ParseException("error creating function starting at line: "+f.beginLine+" column: "+f.beginColumn);
+			}
+	}
+}
+
+PARSER_END(Parser)
+
+<DEFAULT> SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+<DEFAULT> TOKEN :
+{
+  <LB: "(">
+| <RB: ")">
+| <AND: "^">
+| <OR: "|">
+| <NOT: "not">
+| <CM: ",">
+| <CMP: ("=="|">"|"<"|">="|"<=")>
+| <ID: (~["\"","\t","\n","\r",",","(",")","{","}","=",">","<","^","|"])+>
+}
+
+/** Root production. */
+SyntaxBuilder syntax() :{
+	Token p=null,cmp=null;
+	SyntaxBuilder a0=null,a1=null;
+	List<SyntaxBuilder> args=null;
+}
+{
+	((p=<ID>|p=<AND>|p=<OR>|p=<NOT>)(args=arguments())?)(cmp=<CMP>a1=syntax())? {
+		a0=makeFunction(p,args);
+		if (cmp!=null && a1!=null) {
+			args=new ArrayList<SyntaxBuilder>();
+			args.add(a0);
+			args.add(a1);
+			return makeFunction(cmp,args);
+		} else {
+			return a0;
+		}
+	}
+}
+
+List<SyntaxBuilder> arguments() :{
+	List<SyntaxBuilder> args=null;
+}
+{
+	<LB>(args=argumentsBody())?<RB> {return (args!=null)?args:null;}
+}
+List<SyntaxBuilder> argumentsBody() :{
+	SyntaxBuilder wff;
+	List<SyntaxBuilder> args=null;
+}
+{
+	(wff=syntax()(<CM>args=argumentsBody())?) {return (args!=null)?makeArglist(wff,args):makeArglist(wff);}
+}

@@ -1,0 +1,44 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.5"];
+  e1 [label="0.4"];
+  e2 [label="0.5"];
+  e3 [label="0.1"];
+  e4 [label="0.2"];
+  e5 [label="0.05"];
+  e6 [label="1.0"];
+  i0 [shape=box label="(avoid' $1 C $2)"];
+  i1 [shape=box label="(goal' $3 $1 C)"];
+  i2 [shape=box label="(annoy' $9 $2 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  i2 -> r1 [arrowhead=none]
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i2
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o1
+  i2 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o2
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o3
+  e6 -> r6 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(exit' E1 C)"];
+  o1 [shape=box label="(turn' E2 C)"];
+  o2 [shape=box label="(enter' E3 C)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

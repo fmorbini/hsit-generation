@@ -1,0 +1,31 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.05"];
+  e2 [label="0.6"];
+  e3 [label="0.1"];
+  e4 [label="1.0"];
+  i0 [shape=box label="(relief' $471 LT $472)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o2
+  i0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i0
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o3
+  e4 -> r4 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 C)"];
+  o1 [shape=box label="(approach' E2 LT C)"];
+  o2 [shape=box label="(hug' E3 LT C)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

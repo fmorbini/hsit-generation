@@ -1,0 +1,28 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.5"];
+  e1 [label="0.1"];
+  e2 [label="0.8"];
+  e3 [label="1.0"];
+  i0 [shape=box label="(angryAt' $4 LT BT)"];
+  i1 [shape=box label="(argueWith' $290 LT BT)"];
+  r0 [shape=point];
+  r0 -> i1
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o1
+  i1 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o2
+  e3 -> r3 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(argueWith' E1 LT BT)"];
+  o1 [shape=box label="(argueWith' E2 BT LT)"];
+  o2 [shape=box label="(par' E3 E1 E2)"];
+ }
+}
+

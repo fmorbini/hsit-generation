@@ -1,0 +1,54 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.2"];
+  e2 [label="0.5"];
+  e3 [label="0.1"];
+  e4 [label="0.05"];
+  e5 [label="0.01"];
+  e6 [label="0.5"];
+  e7 [label="0.2"];
+  e8 [label="1.0"];
+  i0 [shape=box label="(angryAt' $6 BT C)"];
+  i1 [shape=box label="(unhappy' $598 C)"];
+  i2 [shape=box label="(argueWith' $599 BT C)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i2
+  i0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i0
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o3
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o4
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o5
+  i1 -> r6 [arrowhead=none]
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> i1
+  i2 -> r7 [arrowhead=none]
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> o6
+  e8 -> r8 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 BT)"];
+  o1 [shape=box label="(inside' E2 C)"];
+  o2 [shape=box label="(argueWith' E3 BT C)"];
+  o3 [shape=box label="(exit' E4 BT)"];
+  o4 [shape=box label="(close' E5 BT D)"];
+  o5 [shape=box label="(moveTo' E6 C CORNER)"];
+  o6 [shape=box label="(seq E3 E4 E5 E6)"];
+ }
+}
+

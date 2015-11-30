@@ -1,0 +1,50 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.05"];
+  e1 [label="0.5"];
+  e2 [label="0.75"];
+  e3 [label="0.2"];
+  e4 [label="0.5"];
+  e5 [label="0.1"];
+  e6 [label="0.2"];
+  e7 [label="1.0"];
+  i0 [shape=box label="(see' $461 C BT)"];
+  i1 [shape=box label="(like' $463 C BT)"];
+  i2 [shape=box label="(see' $647 BT $648)"];
+  i3 [shape=box label="(like' $649 BT $648)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  i0 -> r1 [arrowhead=none]
+  i1 -> r1 [arrowhead=none]
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i0
+  o0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i1
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o2
+  i2 -> r4 [arrowhead=none]
+  i3 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i2
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i3
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o3
+  e7 -> r7 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(approach' E1 BT C)"];
+  o1 [shape=box label="(wave' E2 C)"];
+  o2 [shape=box label="(wave' E3 BT)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

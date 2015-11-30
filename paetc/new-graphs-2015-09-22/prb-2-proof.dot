@@ -1,0 +1,26 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.05"];
+  e1 [label="0.9"];
+  e2 [label="0.1"];
+  e3 [label="1.0"];
+  i0 [shape=box label="(afraid' $461 LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  i0 -> r1 [arrowhead=none]
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i0
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o2
+  e3 -> r3 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(approach' E1 C LT)"];
+  o1 [shape=box label="(shake' E2 LT)"];
+  o2 [shape=box label="(seq E1 E2)"];
+ }
+}
+

@@ -1,0 +1,10 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.05"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(bother' E1 C LT)"];
+ }
+}
+

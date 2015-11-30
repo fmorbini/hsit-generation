@@ -1,0 +1,96 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.2"];
+  e2 [label="0.2"];
+  e3 [label="0.7"];
+  e4 [label="0.3"];
+  e5 [label="0.5"];
+  e6 [label="0.5"];
+  e7 [label="0.7"];
+  e8 [label="0.3"];
+  e9 [label="0.5"];
+  e10 [label="0.5"];
+  e11 [label="0.01"];
+  e12 [label="0.01"];
+  e13 [label="1.0"];
+  e14 [label="0.05"];
+  e15 [label="0.05"];
+  e16 [label="1.0"];
+  i0 [shape=box label="(love' $4 BT LT)"];
+  i1 [shape=box label="(goal' $5 $6 BT)"];
+  i2 [shape=box label="(happy' $6 BT)"];
+  i3 [shape=box label="(love' $7 C LT)"];
+  i4 [shape=box label="(goal' $8 $9 C)"];
+  i5 [shape=box label="(happy' $9 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o2
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o3
+  i0 -> r3 [arrowhead=none]
+  i1 -> r3 [arrowhead=none]
+  i2 -> r3 [arrowhead=none]
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i0
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i1
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i2
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o4
+  i3 -> r7 [arrowhead=none]
+  i4 -> r7 [arrowhead=none]
+  i5 -> r7 [arrowhead=none]
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> i3
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> i4
+  e9 -> r9 [arrowhead=none]
+  r10 [shape=point];
+  r10 -> i5
+  e10 -> r10 [arrowhead=none]
+  r11 [shape=point];
+  r11 -> o5
+  e11 -> r11 [arrowhead=none]
+  r12 [shape=point];
+  r12 -> o6
+  e12 -> r12 [arrowhead=none]
+  r13 [shape=point];
+  r13 -> o7
+  e13 -> r13 [arrowhead=none]
+  r14 [shape=point];
+  r14 -> o8
+  e14 -> r14 [arrowhead=none]
+  r15 [shape=point];
+  r15 -> o9
+  e15 -> r15 [arrowhead=none]
+  r16 [shape=point];
+  r16 -> o10
+  e16 -> r16 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 BT)"];
+  o1 [shape=box label="(inside' E2 LT)"];
+  o2 [shape=box label="(inside' E3 C)"];
+  o3 [shape=box label="(kiss' E4 BT LT)"];
+  o4 [shape=box label="(kiss' E5 C LT)"];
+  o5 [shape=box label="(wave' E6 BT)"];
+  o6 [shape=box label="(wave' E7 C)"];
+  o7 [shape=box label="(par' E8 E6 E7)"];
+  o8 [shape=box label="(exit' E9 C)"];
+  o9 [shape=box label="(exit' E10 BT)"];
+  o10 [shape=box label="(seq E4 E5 E8 E9 E10)"];
+ }
+}
+

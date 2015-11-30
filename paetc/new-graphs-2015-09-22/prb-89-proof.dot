@@ -1,0 +1,45 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.1"];
+  e1 [label="0.2"];
+  e2 [label="0.3"];
+  e3 [label="0.5"];
+  e4 [label="0.1"];
+  e5 [label="0.3"];
+  e6 [label="1.0"];
+  i0 [shape=box label="(angry' $1 LT)"];
+  i1 [shape=box label="(goal' $238 $239 BT)"];
+  i2 [shape=box label="(attack' $239 BT LT)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o1
+  i1 -> r2 [arrowhead=none]
+  i2 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i1
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i2
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o2
+  i2 -> r5 [arrowhead=none]
+  i1 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o3
+  e6 -> r6 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(hit' E1 LT C)"];
+  o1 [shape=box label="(approach' E2 BT LT)"];
+  o2 [shape=box label="(fight' E3 BT LT)"];
+  o3 [shape=box label="(seq E1 E2 E3)"];
+ }
+}
+

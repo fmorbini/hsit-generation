@@ -1,0 +1,45 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.9"];
+  e1 [label="0.5"];
+  e2 [label="1.0"];
+  e3 [label="0.1"];
+  e4 [label="0.9"];
+  e5 [label="0.6"];
+  e6 [label="1.0"];
+  i0 [shape=box label="(goal' $1 $2 C)"];
+  i1 [shape=box label="(not' $2 $3)"];
+  i2 [shape=box label="(see' $3 BT C)"];
+  i3 [shape=box label="(startle' $97 C BT)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  i2 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i2
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o1
+  i3 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i3
+  i2 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o2
+  e6 -> r6 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(creepUpOn' E1 C BT)"];
+  o1 [shape=box label="(flinch' E2 BT)"];
+  o2 [shape=box label="(seq E1 E2)"];
+ }
+}
+

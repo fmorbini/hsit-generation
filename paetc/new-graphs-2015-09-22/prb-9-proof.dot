@@ -1,0 +1,42 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.1"];
+  e1 [label="0.5"];
+  e2 [label="0.1"];
+  e3 [label="0.15"];
+  e4 [label="0.8"];
+  e5 [label="1.0"];
+  i0 [shape=box label="(goal' $4 $5 C)"];
+  i1 [shape=box label="(annoy' $5 C LT)"];
+  i2 [shape=box label="(angryAt' $275 LT C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o3
+  i2 -> r3 [arrowhead=none]
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i2
+  i1 -> r4 [arrowhead=none]
+  i0 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o4
+  e5 -> r5 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(poke' E1 C LT)"];
+  o1 [shape=box label="(poke' E2 C LT)"];
+  o2 [shape=box label="(poke' E3 C LT)"];
+  o3 [shape=box label="(hit' E4 LT C)"];
+  o4 [shape=box label="(seq E1 E2 E3 E4)"];
+ }
+}
+

@@ -1,0 +1,46 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.7"];
+  e1 [label="0.3"];
+  e2 [label="0.5"];
+  e3 [label="0.5"];
+  e4 [label="0.9"];
+  e5 [label="0.1"];
+  e6 [label="1.0"];
+  i0 [shape=box label="(love' $1 C LT)"];
+  i1 [shape=box label="(goal' $2 $3 C)"];
+  i2 [shape=box label="(happy' $3 C)"];
+  i3 [shape=box label="(kiss' $11 C LT)"];
+  i4 [shape=box label="(reject' $13 LT C)"];
+  r0 [shape=point];
+  r0 -> i3
+  i0 -> r0 [arrowhead=none]
+  i1 -> r0 [arrowhead=none]
+  i2 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> i1
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i2
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o1
+  i3 -> r4 [arrowhead=none]
+  i4 -> r4 [arrowhead=none]
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> i4
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> o2
+  e6 -> r6 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(kiss' E1 C LT)"];
+  o1 [shape=box label="(turn' E2 LT)"];
+  o2 [shape=box label="(seq E1 E2)"];
+ }
+}
+

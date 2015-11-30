@@ -1,0 +1,78 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.1"];
+  e1 [label="0.5"];
+  e2 [label="0.1"];
+  e3 [label="0.5"];
+  e4 [label="1.0"];
+  e5 [label="0.3"];
+  e6 [label="0.5"];
+  e7 [label="0.1"];
+  e8 [label="0.1"];
+  e9 [label="0.1"];
+  e10 [label="0.5"];
+  e11 [label="1.0"];
+  e12 [label="1.0"];
+  i0 [shape=box label="(happy' $1 BT)"];
+  i1 [shape=box label="(happy' $2 LT)"];
+  i2 [shape=box label="(goal' $3 $4 C)"];
+  i3 [shape=box label="(attack' $4 C BT)"];
+  i4 [shape=box label="(happy' $835 C)"];
+  r0 [shape=point];
+  r0 -> o0
+  i0 -> r0 [arrowhead=none]
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> i0
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o1
+  i1 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> i1
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> o2
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o3
+  i2 -> r5 [arrowhead=none]
+  i3 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i2
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> i3
+  e7 -> r7 [arrowhead=none]
+  r8 [shape=point];
+  r8 -> o4
+  i2 -> r8 [arrowhead=none]
+  i3 -> r8 [arrowhead=none]
+  e8 -> r8 [arrowhead=none]
+  r9 [shape=point];
+  r9 -> o5
+  i4 -> r9 [arrowhead=none]
+  e9 -> r9 [arrowhead=none]
+  r10 [shape=point];
+  r10 -> i4
+  e10 -> r10 [arrowhead=none]
+  r11 [shape=point];
+  r11 -> o7
+  e11 -> r11 [arrowhead=none]
+  r12 [shape=point];
+  r12 -> o8
+  e12 -> r12 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(dance' E1 BT)"];
+  o1 [shape=box label="(dance' E2 LT)"];
+  o2 [shape=box label="(par' E3 E1 E2)"];
+  o3 [shape=box label="(approach' E4 C BT)"];
+  o4 [shape=box label="(push' E5 C BT)"];
+  o5 [shape=box label="(dance' E6 C)"];
+  o6 [shape=box label="(dance' E7 LT)"];
+  o7 [shape=box label="(par' E8 E6 E7)"];
+  o8 [shape=box label="(seq E3 E4 E5 E8)"];
+ }
+}
+

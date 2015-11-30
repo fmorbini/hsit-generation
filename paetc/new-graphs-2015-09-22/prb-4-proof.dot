@@ -1,0 +1,50 @@
+digraph proof {
+ graph [rankdir="TB"]
+  e0 [label="0.2"];
+  e1 [label="0.01"];
+  e2 [label="0.9"];
+  e3 [label="0.05"];
+  e4 [label="0.5"];
+  e5 [label="0.75"];
+  e6 [label="0.1"];
+  e7 [label="1.0"];
+  i0 [shape=box label="(goal' $4 E4 BT)"];
+  i1 [shape=box label="(dislike' $105 C BT)"];
+  r0 [shape=point];
+  r0 -> o0
+  e0 -> r0 [arrowhead=none]
+  r1 [shape=point];
+  r1 -> o1
+  e1 -> r1 [arrowhead=none]
+  r2 [shape=point];
+  r2 -> o2
+  o3 -> r2 [arrowhead=none]
+  i0 -> r2 [arrowhead=none]
+  e2 -> r2 [arrowhead=none]
+  r3 [shape=point];
+  r3 -> o3
+  e3 -> r3 [arrowhead=none]
+  r4 [shape=point];
+  r4 -> i0
+  e4 -> r4 [arrowhead=none]
+  r5 [shape=point];
+  r5 -> o4
+  o1 -> r5 [arrowhead=none]
+  i1 -> r5 [arrowhead=none]
+  o0 -> r5 [arrowhead=none]
+  e5 -> r5 [arrowhead=none]
+  r6 [shape=point];
+  r6 -> i1
+  e6 -> r6 [arrowhead=none]
+  r7 [shape=point];
+  r7 -> o5
+  e7 -> r7 [arrowhead=none]
+ subgraph cluster {  o0 [shape=box label="(inside' E1 C)"];
+  o1 [shape=box label="(outside' E2 BT)"];
+  o2 [shape=box label="(knock' E3 BT D)"];
+  o3 [shape=box label="(open' E4 C D)"];
+  o4 [shape=box label="(close' E5 C D)"];
+  o5 [shape=box label="(seq E3 E4 E5)"];
+ }
+}
+
